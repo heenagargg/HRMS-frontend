@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+  --theme-white:#fff;
+  --primary-color:#FFC913;
+  --input-field-padding:12px;
+  --input-field-border-radius:20px;
+  --input-field-border:1px solid gray;
+  --input-placeholder-color:rgb(167, 167, 167);
+
+}

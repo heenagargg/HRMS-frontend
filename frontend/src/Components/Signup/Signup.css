@@ -1,0 +1,183 @@
+.signup-page-container{
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.signup-image-div{
+    width: 55%;
+}
+.signup-image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.signup-form-container{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.signup-form-div{
+    /* border: 1px solid; */
+    width: 80%;
+    padding: 30px 20px;
+}
+.signup-title{
+    text-align: center;
+    font-size: 20px;
+}
+.signup-title h1{
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.signup-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* border: 1px solid ; */
+}
+.name-email-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.name-div{
+    width: 50%;
+}
+.name-div input,.email-div input{
+    padding: var(--input-field-padding);
+    width: 100%;
+    outline: none;
+    border-radius: var(--input-field-border-radius);
+    border: var(--input-field-border);
+}
+.name-div input::placeholder,.email-div input::placeholder{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--input-placeholder-color);
+}
+.email-div{
+    width: 50%;
+}
+.contact-div-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.contact-div{
+    width: 50%;
+}
+.contact-div input{
+    padding: var(--input-field-padding);
+    width: 100%;
+    outline: none;
+    border-radius: var(--input-field-border-radius);
+    border: var(--input-field-border);
+}
+.contact-div input::placeholder{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--input-placeholder-color);
+}
+.address-div{
+    width: 100%;
+}
+.address-div input{
+    padding: var(--input-field-padding);
+    width: 100%;
+    outline: none;
+    border-radius: var(--input-field-border-radius);
+    border: var(--input-field-border);
+}
+.address-div input::placeholder{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--input-placeholder-color);
+}
+.role-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.role-div{
+    width: 33%;
+}
+.role-div select{
+    padding: var(--input-field-padding);
+    width: 100%;
+    outline: none;
+    border-radius: var(--input-field-border-radius);
+    outline: var(--input-field-border);
+    border: none;
+    border-right: 8px solid transparent;
+
+}
+.team-div{
+    width: 33%;
+}
+.team-div input{
+    padding: var(--input-field-padding);
+    width: 100%;
+    outline: none;
+    border-radius: var(--input-field-border-radius);
+    border: var(--input-field-border);
+}
+.team-div input::placeholder{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--input-placeholder-color);
+}
+.designation-div{
+    width: 33%;
+}
+.designation-div input{
+    padding: var(--input-field-padding);
+    width: 100%;
+    outline: none;
+    border-radius: var(--input-field-border-radius);
+    border: var(--input-field-border);
+}
+.designation-div input::placeholder{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--input-placeholder-color);
+}
+.password-div-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.password-div{
+    width: 50%;
+}
+.password-div input{
+    padding: var(--input-field-padding);
+    width: 100%;
+    outline: none;
+    border-radius: var(--input-field-border-radius);
+    border: var(--input-field-border);
+}
+.password-div input::placeholder{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--input-placeholder-color);
+}
+.signup-form button{
+    padding: var(--input-field-padding);
+    border-radius: var(--input-field-border-radius);
+    border: none;
+    background-color: var(--primary-color);
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
