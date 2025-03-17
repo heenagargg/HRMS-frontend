@@ -56,6 +56,7 @@
     outline: none;
     border-radius: var(--input-field-border-radius);
     border: var(--input-field-border);
+    color:var(--theme-black);
 }
 .name-div input::placeholder,.email-div input::placeholder{
     font-size: 12px;
@@ -80,6 +81,7 @@
     outline: none;
     border-radius: var(--input-field-border-radius);
     border: var(--input-field-border);
+    color:var(--theme-black);
 }
 .contact-div input::placeholder{
     font-size: 12px;
@@ -95,6 +97,7 @@
     outline: none;
     border-radius: var(--input-field-border-radius);
     border: var(--input-field-border);
+    color:var(--theme-black);
 }
 .address-div input::placeholder{
     font-size: 12px;
@@ -118,6 +121,7 @@
     outline: var(--input-field-border);
     border: none;
     border-right: 8px solid transparent;
+    color:var(--theme-black);
 
 }
 .team-div{
@@ -129,6 +133,7 @@
     outline: none;
     border-radius: var(--input-field-border-radius);
     border: var(--input-field-border);
+    color:var(--theme-black);
 }
 .team-div input::placeholder{
     font-size: 12px;
@@ -144,6 +149,7 @@
     outline: none;
     border-radius: var(--input-field-border-radius);
     border: var(--input-field-border);
+    color:var(--theme-black);
 }
 .designation-div input::placeholder{
     font-size: 12px;
@@ -158,6 +164,8 @@
 }
 .password-div{
     width: 50%;
+    position: relative;
+  
 }
 .password-div input{
     padding: var(--input-field-padding);
@@ -165,7 +173,19 @@
     outline: none;
     border-radius: var(--input-field-border-radius);
     border: var(--input-field-border);
+    color:var(--theme-black);
+
 }
+.pass-hidden{
+    color: #a4a4a4;
+}
+.eye-icon{
+    position: absolute;
+    right: 12px;
+    top:12px;
+    cursor: pointer;
+}
+
 .password-div input::placeholder{
     font-size: 12px;
     letter-spacing: 0.5px;
@@ -180,4 +200,14 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
+}
+.signup-info-div{
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+.login-link{
+    color: rgb(9, 76, 171);
+    font-weight: 600;
+    cursor: pointer;
 }
