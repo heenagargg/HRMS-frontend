@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 .login-image-div{
-    width: 55%;
+    width: 50%;
 }
 .login-image-div img{
     height: 100%;
@@ -14,7 +14,7 @@
     object-fit: cover;
 }
 .login-form-container{
-    width: 45%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;

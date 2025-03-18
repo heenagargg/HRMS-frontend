@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 .signup-image-div{
-    width: 55%;
+    width: 50%;
 }
 .signup-image-div img{
     height: 100%;
@@ -14,7 +14,7 @@
     object-fit: cover;
 }
 .signup-form-container{
-    width: 45%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +33,7 @@
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 40px;
+    cursor: default;
 }
 .signup-form{
     width: 100%;
@@ -49,6 +50,26 @@
 }
 .name-div{
     width: 50%;
+    position: relative;
+}
+.error-text{
+    position: absolute;
+    color: crimson;
+    font-size: 10px;
+    bottom: -13px;
+    left: 10px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+.pass-error-text{
+    position: absolute;
+    color: crimson;
+    font-size: 10px;
+    bottom: -40x;
+    left: 10px;
+    width: 100%;
+    /* white-space: nowrap; */
+    font-weight: 500;
 }
 .name-div input,.email-div input{
     padding: var(--input-field-padding);
@@ -65,6 +86,7 @@
 }
 .email-div{
     width: 50%;
+    position: relative;
 }
 .contact-div-container{
     display: flex;
@@ -74,6 +96,7 @@
 }
 .contact-div{
     width: 50%;
+    position: relative;
 }
 .contact-div input{
     padding: var(--input-field-padding);
@@ -90,6 +113,7 @@
 }
 .address-div{
     width: 100%;
+    position: relative;
 }
 .address-div input{
     padding: var(--input-field-padding);
@@ -112,6 +136,7 @@
 }
 .role-div{
     width: 33%;
+    position: relative;
 }
 .role-div select{
     padding: var(--input-field-padding);
@@ -122,10 +147,12 @@
     border: none;
     border-right: 8px solid transparent;
     color:var(--theme-black);
+    cursor: pointer;
 
 }
 .team-div{
     width: 33%;
+    position: relative;
 }
 .team-div input{
     padding: var(--input-field-padding);
@@ -142,6 +169,7 @@
 }
 .designation-div{
     width: 33%;
+    position: relative;
 }
 .designation-div input{
     padding: var(--input-field-padding);
@@ -200,6 +228,17 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    min-height: 37.6px;
+}
+.signup-form button.disabled-btn{
+    cursor: not-allowed;
+}
+.loading-img{
+    position: absolute;
+    top: 8px;
 }
 .signup-info-div{
     text-align: center;
