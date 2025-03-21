@@ -7,6 +7,8 @@ import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import loading from "../../assets/Rolling@1x-1.0s-200px-200px.gif"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Signup = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
@@ -95,13 +97,14 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
+    // if (!validateForm()) return;
     setIsButtonDisabled(true)
 
     setTimeout(() => {
         setIsButtonDisabled(false)
         navigate('/verification')
     }, 3000);
+    toast.success("A verification code has been sent to your email. Please check your inbox and enter the code below to verify your account.",)
     // add a toast here to notify user that sign up is successful
     // send the verfication code to email
     // then redirect to the verification page
