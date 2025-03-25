@@ -11,6 +11,7 @@ import EmployeeDashboard from './Components/EmployeeDashboard/EmployeeDashboard'
 import HrDashboard from './Components/HrDashboard/HrDashboard'
 import ManageEmployess from './Components/ManageEmplyees/ManageEmployess'
 import AddEmployee from './Components/AddEmployee/AddEmployee'
+import VerifyEmail from './Components/verifyEmail/verifyEmail'
 const App = () => {
   return (
     <div>
@@ -26,8 +27,9 @@ const App = () => {
         <Route path='/hr-dashboard' element={<HrDashboard  />}/>
         <Route path='/manage-employees' element={<ManageEmployess  />}/>
         <Route path='/add-employee' element={<AddEmployee/>}/>
+        <Route path='/verify-email' element={<VerifyEmail/>}/>
       </Routes>
-      <ToastContainer style={{fontSize:'12px'}}/>
+      <ToastContainer style={{fontSize:'14px'}}/>
       </BrowserRouter>
     </div>
   )

@@ -197,6 +197,9 @@
 }
 .confirm-btn{
     background-color:#ffc813d4 ;
+    position: relative;
+    min-height: 29px;
+    min-width: 46px;
 }
 .confirm-btn:hover{
     background-color: var(--primary-color);
@@ -206,4 +209,15 @@
 }
 .cancel-btn:hover{
     background-color: #ccc;
+}
+.confirm-btn.disabled-btn{
+    cursor: not-allowed;
+}
+.loading-image{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
 }

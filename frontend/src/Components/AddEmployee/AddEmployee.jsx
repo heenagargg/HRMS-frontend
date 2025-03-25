@@ -9,8 +9,14 @@ import { useForm } from "react-hook-form";
 import Popup from "../popup/Popup";
 import { useNavigate } from "react-router";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import axios from "axios";
+import { addNewEmployee } from "../Services/EmployeeOnboarding";
+import { toast } from "react-toastify";
+import loading from "../../assets/Rolling@1x-1.0s-200px-200px.gif";
 const AddEmployee = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(null);
+  const [isbuttonLoading, setIsButtonLoading] = useState(null);
+  const [newEmployeeData, setNewEmployeeData] = useState();
   const navigate = useNavigate();
   const {
     register,
@@ -21,8 +27,26 @@ const AddEmployee = () => {
 
   const submitData = (data) => {
     console.log(data);
+    setNewEmployeeData(data);
     setIsPopupOpen(true);
   };
+
+  const handleOnboarding = async () => {
+    setIsButtonLoading(true);
+    const response = await addNewEmployee(newEmployeeData);
+    console.log("response", response);
+    if (response.data.success) {
+      setIsButtonLoading(false);
+      toast.success(response.data.message);
+      navigate("/manage-employees");
+    } else {
+      setIsButtonLoading(false);
+      setIsPopupOpen(false);
+      toast.error(response.data.message);
+      navigate("/add-employee");
+    }
+  };
+
   return (
     <div className="hr-dash-container">
       {isPopupOpen && (
@@ -32,10 +56,16 @@ const AddEmployee = () => {
           </div>
           <div className="add-emp-btns">
             <button
-              className="confirm-btn"
-              onClick={() => navigate("/manage-employees")}
+              className={`${
+                isbuttonLoading ? "disabled-btn" : ""
+              } confirm-btn `}
+              onClick={() => handleOnboarding()}
             >
-              Yes
+              {isbuttonLoading ? (
+                <img className="loading-image" src={loading} alt="loading..." />
+              ) : (
+                <p>Yes</p>
+              )}
             </button>
             <button
               className="cancel-btn"
@@ -104,7 +134,7 @@ const AddEmployee = () => {
                 placeholder="Email Address"
                 name="email"
                 maxLength={100}
-                 autoComplete="off"
+                autoComplete="off"
                 {...register("email", {
                   required: {
                     value: true,
@@ -122,7 +152,7 @@ const AddEmployee = () => {
                 <small className="errors-text">{errors.email.message}</small>
               )}
             </div>
-            <div className="role-div">
+            {/* <div className="role-div">
               <select
                 name="role"
                 id="role"
@@ -136,21 +166,45 @@ const AddEmployee = () => {
                 <option value="" disabled selected>
                   Role
                 </option>
-                <option value="hr">HR</option>
-                <option value="manager">Manager</option>
-                <option value="employee">Employee</option>
+                <option value="Hr">HR</option>
+                <option value="Manager">Manager</option>
+                <option value="Employee">Employee</option>
+              </select>
+              {errors?.role && (
+                <small className="errors-text">{errors.role.message}</small>
+              )}
+            </div> */}
+            <div className="role-div">
+              <select
+                name="role"
+                id="role"
+                {...register("role", {
+                  required: {
+                    value: true,
+                    message: "Role is required",
+                  },
+                })}
+                defaultValue="" // Fix to prevent "disabled selected" issue
+              >
+                <option value="" disabled>
+                  Role
+                </option>
+                <option value="Hr">HR</option>
+                <option value="Manager">Manager</option>
+                <option value="Employee">Employee</option>
               </select>
               {errors?.role && (
                 <small className="errors-text">{errors.role.message}</small>
               )}
             </div>
+
             <div className="team-div">
               <input
                 type="text"
                 placeholder="Team Name"
                 name="teamName"
                 maxLength={30}
-                 autoComplete="off"
+                autoComplete="off"
                 {...register("teamName", {
                   required: {
                     value: true,
@@ -168,7 +222,7 @@ const AddEmployee = () => {
                 placeholder="Designation"
                 name="designation"
                 maxLength={30}
-                 autoComplete="off"
+                autoComplete="off"
                 {...register("designation", {
                   required: {
                     value: true,
