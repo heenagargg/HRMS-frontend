@@ -189,7 +189,7 @@ const AddEmployee = () => {
                 <option value="" disabled>
                   Role
                 </option>
-                <option value="Hr">HR</option>
+                <option value="HR">HR</option>
                 <option value="Manager">Manager</option>
                 <option value="Employee">Employee</option>
               </select>
